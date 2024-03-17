@@ -30,4 +30,5 @@ const proveedorModel = db.define('proveedor', {
         allowNull: false
     }
 })
+
 module.exports = proveedorModel;
