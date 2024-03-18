@@ -1,6 +1,6 @@
-const usuariosModel = require ('../models/modeloUsuario.js');
+const usuariosModel = require ('../models/usuarioModel.js');
 
-const inicio =(req, res)=>{//cada que se ponga la ruta raiz responde el router/para poder usar dicha ruta raiz se debe exportar
+8/*const inicio =(req, res)=>{//cada que se ponga la ruta raiz responde el router/para poder usar dicha ruta raiz se debe exportar
     res.render('index', 
     {titulo:'Juan', 
     enc:'Hola2'});//no pone la ruta al estar cargado el EJS desde views, para que el elemento dentro de las llaves se debe mandar llamar desde el EJS
@@ -31,13 +31,13 @@ const usuarios = async (req, res)=>{//cada que se ponga la ruta raiz responde el
     res.render('usuarios', 
     {titulo:'Usuarios registrados', 
     enc:'Usuarios registrados'});//no pone la ruta al estar cargado el EJS desde views, para que el elemento dentro de las llaves se debe mandar llamar desde el EJS
-}
+}*/
 
 
-module.exports = {
+/*module.exports = {
     inicio, 
     registro, 
     login,
     productos, 
     usuarios
-}
+}*/

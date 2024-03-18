@@ -1,5 +1,5 @@
 {
-  "name": "idgs8a",
+  "name": "beat_alls",
   "version": "1.0.0",
   "description": "mi primer página web profesional con node y express",
   "main": "index.js",
@@ -12,8 +12,9 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "mysql2": "^3.9.1",
-    "sequelize": "^6.37.0"
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1",
+    "tedious": "^18.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"

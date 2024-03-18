@@ -1,49 +1,54 @@
-const sequelize = require('sequelize'); //trae el squelize
+const {Sequelize, DataTypes}  = require('sequelize'); //trae el squelize
 const db = require('../config/db.js');//trae la conexion con la bd
 
-const productosModel = db.define("productos", {
-    id_producto:{
-        type: sequelize.INTEGER,
+const productosModel = db.define('productos', {
+    ID_Producto:{
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
     },
-    nombre_producto:{
-        type: sequelize.STRING,
+    Nombre_producto:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    descripción:{
-        type: sequelize.STRING,
+    Descripcion:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    color:{
-        type: sequelize.STRING,
+    Color:{
+        type: DataTypesSTRING,
         allowNull: false
     },
-    talla:{
-        type: sequelize.STRING,
+    Talla:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    material:{
-        type: sequelize.STRING,
+    Material:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    marca:{
-        type: sequelize.STRING,
+    Marca:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    temporada:{
-        type: sequelize.STRING,
+    Temporada:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    existencias:{
-        type: sequelize.SMALLINT,
+    Existencias:{
+        type: DataTypes.SMALLINT,
         allowNull: false
     },
-    id_proveedor:{
-        type: sequelize.INTEGER,
+    ID_Proveedor:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-})
+},
+{
+    tableName: 'productos',
+    timestamps: false
+}
+)
 
 module.exports = productosModel;

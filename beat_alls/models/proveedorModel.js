@@ -1,33 +1,38 @@
-const sequelize = require('sequelize'); //trae el squelize
+const {Sequelize, DataTypes}  = require('sequelize'); //trae el squelize
 const db = require('../config/db.js');//trae la conexion con la bd
 
 const proveedorModel = db.define('proveedor', {
-    id_proveedor:{
-        type: sequelize.INTEGER,
+    ID_Proveedor:{
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
     },
-    nombre:{
-        type: sequelize.STRING,
+    Nombre:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    apellido:{
-        type: sequelize.STRING,
+    Apellido:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    telefono:{
-        type: sequelize.BIGINT,
+    Telefono:{
+        type: DataTypes.BIGINT,
         unique: true,
         allowNull: false
     },
-    correo:{
-        type: sequelize.STRING,
+    Correo:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    empresa:{
-        type: sequelize.STRING,
+    Empresa:{
+        type: DataTypes.STRING,
         allowNull: false
     }
-})
+}, 
+{
+    tableName: 'proveedor',
+    timestamps: false
+}
+)
 module.exports = proveedorModel;

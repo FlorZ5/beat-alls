@@ -1,63 +1,64 @@
-const sequelize = require('sequelize'); //trae el squelize
+const {Sequelize, DataTypes}  = require('sequelize'); //trae el squelize
 const db = require('../config/db.js');//trae la conexion con la bd
 
-const pedidosModel = db.define("pedidos", {
-    no_pedido:{
-        type: sequelize.INTEGER,
+const pedidosModel = db.define('pedidos', {
+    No_pedido:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    id_carrito:{
-        type: sequelize.INTEGER,
+    ID_Cliente:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    id_cliente:{
-        type: sequelize.INTEGER,
+    Nombre_cliente:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    nombre_cliente:{
-        type: sequelize.STRING,
+    ID_Producto:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    id_producto:{
-        type: sequelize.INTEGER,
+    Nombre_producto:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    nombre_producto:{
-        type: sequelize.STRING,
+    Descripcion:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    descripcion:{
-        type: sequelize.STRING,
+    Cantidad_producto:{
+        type: DataTypes.SMALLINT,
         allowNull: false
     },
-    cantidad_producto:{
-        type: sequelize.SMALLINT,
+    Precio_unitario_producto:{
+        type: DataTypes.SMALLINT,
         allowNull: false
     },
-    precio_unitario_producto:{
-        type: sequelize.SMALLINT,
+    Precio_total_productos:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    precio_total_productos:{
-        type: sequelize.INTEGER,
+    Cantidad_pagar:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    cantidad_pagar:{
-        type: sequelize.INTEGER,
+    Ubicacion:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    ubicacion:{
-        type: sequelize.STRING,
-        allowNull: false
-    },
-    fecha:{
-        type: sequelize.DATE,
+    Fecha:{
+        type: DataTypes.DATE,
         allowNull: true
     },
-    estatus:{
-        type: sequelize.STRING,
+    Estatus:{
+        type: DataTypes.STRING,
         allowNull: false
     }
-})
+},
+{
+    tableName: 'pedidos',
+    timestamps: false
+}
+)
 
 module.exports = pedidosModel;

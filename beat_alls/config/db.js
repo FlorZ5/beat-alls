@@ -1,6 +1,6 @@
 const sequelize = require('sequelize');
 
-const db=new sequelize('dwp','root','',{
+const db=new sequelize('beat_alls','root','',{
     host: 'localhost' || "127.0.0.1",
     port:"3306",
     dialect:'mysql',
