@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 const usuariosModel = require ('../models/usuarioModel.js');
-=======
 // const usuariosModel = require ('../models/modeloUsuario.js');
->>>>>>> 907095d7a243eb117427f60aabbe1826d3b678ad
 
 8/*const inicio =(req, res)=>{//cada que se ponga la ruta raiz responde el router/para poder usar dicha ruta raiz se debe exportar
     res.render('index', 
