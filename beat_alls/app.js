@@ -11,13 +11,6 @@ const db = require('./config/db.js')//constante para iportar bd
     next();
 })*/
 
-//conexion a bd
-db.authenticate()
-.then(()=>{
-    console.log("conexion a bd exitosa")
-}).catch((err)=>{
-    console.error(err);
-});
 
 app.set('views', path.join(__dirname, 'views'));//se indica que busque en la carpeta views las vistas para evitar confunfuciones, el path.join ayuda que la ruta se encuentre más rapido y lograr conversiones de diagonales en las rutas
 app.set('view engine', 'ejs');//para setiar el ejs y que se corra cada que se ejecute la app
@@ -27,5 +20,5 @@ app.use('/prueba', express.static(path.join(__dirname, "public")));//para cuando
 app.use(express.static('public'));//para cuando se mande la periccion localhost 3000 se abra inmediatamente el estilo del registro
 
 app.listen(port, ()=>{ //contiene una funcion para escuchar el puerto, donde manda como mensaje el numero del puerto 
-    console.log(`listening on port ${port}`);
+    console.log(`Listening on port ${port}`);
 });

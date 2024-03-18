@@ -29,10 +29,15 @@ const proveedorModel = db.define('proveedor', {
         type: DataTypes.STRING,
         allowNull: false
     }
+<<<<<<< HEAD
 }, 
 {
     tableName: 'proveedor',
     timestamps: false
 }
 )
+=======
+})
+
+>>>>>>> 907095d7a243eb117427f60aabbe1826d3b678ad
 module.exports = proveedorModel;
