@@ -1,61 +1,64 @@
 const {Sequelize, DataTypes}  = require('sequelize'); //trae el squelize
 const db = require('../config/db.js');//trae la conexion con la bd
 
-const usuarioModel = db.define('usuario', {//usuarios corresponde a la tabala con la que se va a trabajar
-    ID_Usuario:{
+const pedidosModel = db.define('pedidos', {
+    No_pedido:{
         type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-        autoIncrement: true
+        allowNull: false
     },
-    Nombre:{
+    ID_Cliente:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    Nombre_cliente:{
         type: DataTypes.STRING,
         allowNull: false
     },
-    Apellido:{
+    ID_Producto:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    Nombre_producto:{
         type: DataTypes.STRING,
         allowNull: false
     },
-    Direccion:{
+    Descripcion:{
         type: DataTypes.STRING,
         allowNull: false
     },
-    Edad:{
+    Cantidad_producto:{
+        type: DataTypes.SMALLINT,
+        allowNull: false
+    },
+    Precio_unitario_producto:{
+        type: DataTypes.SMALLINT,
+        allowNull: false
+    },
+    Precio_total_productos:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    Cantidad_pagar:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    Ubicacion:{
         type: DataTypes.STRING,
         allowNull: false
     },
-    Fecha_nacimiento:{
-        type: DataTypes.DATEONLY,
-        allowNull: false
+    Fecha:{
+        type: DataTypes.DATE,
+        allowNull: true
     },
-    Telefono:{
-        type: DataTypes.BIGINT,
-        unique: true,
-        allowNull: false
-    },
-    Correo:{
-        type: DataTypes.STRING,
-        unique: true,
-        allowNull: false
-    },
-    Rol:{
+    Estatus:{
         type: DataTypes.STRING,
         allowNull: false
-    },
-    Nombre_usuario: {
-        type: DataTypes.STRING,
-        unique: true,
-        allowNull: false
-    },
-    Contrasena:{
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+    }
 },
 {
-    tableName: 'usuario',
+    tableName: 'pedidos',
     timestamps: false
 }
-);
+)
 
 module.exports = usuarioModel;
