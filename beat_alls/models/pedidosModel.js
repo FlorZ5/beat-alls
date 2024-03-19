@@ -1,63 +1,61 @@
-const sequelize = require('sequelize'); //trae el squelize
+const {Sequelize, DataTypes}  = require('sequelize'); //trae el squelize
 const db = require('../config/db.js');//trae la conexion con la bd
 
-const pedidosModel = db.define("pedidos", {
-    no_pedido:{
-        type: sequelize.INTEGER,
+const usuarioModel = db.define('usuario', {//usuarios corresponde a la tabala con la que se va a trabajar
+    ID_Usuario:{
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true
+    },
+    Nombre:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    id_carrito:{
-        type: sequelize.INTEGER,
+    Apellido:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    id_cliente:{
-        type: sequelize.INTEGER,
+    Direccion:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    nombre_cliente:{
-        type: sequelize.STRING,
+    Edad:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    id_producto:{
-        type: sequelize.INTEGER,
+    Fecha_nacimiento:{
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
-    nombre_producto:{
-        type: sequelize.STRING,
+    Telefono:{
+        type: DataTypes.BIGINT,
+        unique: true,
         allowNull: false
     },
-    descripcion:{
-        type: sequelize.STRING,
+    Correo:{
+        type: DataTypes.STRING,
+        unique: true,
         allowNull: false
     },
-    cantidad_producto:{
-        type: sequelize.SMALLINT,
+    Rol:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    precio_unitario_producto:{
-        type: sequelize.SMALLINT,
+    Nombre_usuario: {
+        type: DataTypes.STRING,
+        unique: true,
         allowNull: false
     },
-    precio_total_productos:{
-        type: sequelize.INTEGER,
+    Contrasena:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    cantidad_pagar:{
-        type: sequelize.INTEGER,
-        allowNull: false
-    },
-    ubicacion:{
-        type: sequelize.STRING,
-        allowNull: false
-    },
-    fecha:{
-        type: sequelize.DATE,
-        allowNull: true
-    },
-    estatus:{
-        type: sequelize.STRING,
-        allowNull: false
-    }
-})
+},
+{
+    tableName: 'usuario',
+    timestamps: false
+}
+);
 
-module.exports = pedidosModel;
+module.exports = usuarioModel;

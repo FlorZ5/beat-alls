@@ -1,43 +1,48 @@
-const sequelize = require('sequelize'); //trae el squelize
+const {Sequelize, DataTypes}  = require('sequelize'); //trae el squelize
 const db = require('../config/db.js');//trae la conexion con la bd
 
-const carritoModel = db.define("carrito", {
-    id_carrito:{
-        type: sequelize.INTEGER,
+const carritoModel = db.define('carrito', {
+    ID_Carrito:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    id_cliente:{
-        type: sequelize.INTEGER,
+    ID_Cliente:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    id_producto:{
-        type: sequelize.INTEGER,
+    ID_Producto:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    nombre_producto:{
-        type: sequelize.STRING,
+    Nombre_producto:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    descripcion:{
-        type: sequelize.STRING,
+    Descripcion:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    cantidad_producto:{
-        type: sequelize.SMALLINT,
+    Cantidad_producto:{
+        type: DataTypes.SMALLINT,
         allowNull: false
     },
-    precio_unitario_producto:{
-        type: sequelize.SMALLINT,
+    Precio_unitario_producto:{
+        type: DataTypes.SMALLINT,
         allowNull: false
     },
-    precio_total_productos:{
-        type: sequelize.INTEGER,
+    Precio_total_productos:{
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    cantidad_pagar:{
-        type: sequelize.INTEGER,
+    Cantidad_pagar:{
+        type: DataTypes.INTEGER,
         allowNull: false
     }
-})
+},
+{
+    tableName: 'carrito',
+    timestamps: false
+}
+)
 
 module.exports = carritoModel;

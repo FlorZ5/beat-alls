@@ -1,23 +1,19 @@
-const sql = require('mssql');
+const { Sequelize } = require('sequelize');
 
-const db = {
-  user: 'EdgeSlayer97', //Aqui puse mi usuario pero podemos generar unos identicos para no cambiar valores mientras hacemos pruebas.
-  password: 'password',
-  server: 'localhost', //Este dejalo así mientras hacemos pruebas.
-  database: 'beat_alls',
-  options: {
-    encrypt: false,
-    enableArithAbort: true 
-  }
-};
-
-const conexion = new sql.ConnectionPool(db);
-const Connect = conexion.connect();
-
-Connect.then(() => {
-  console.log('Successful connection to the database.');
-}).catch(err => {
-  console.error('Error connecting to database: ', err);
+const db = new Sequelize('beat_alls', 'root', '', {
+  host: 'localhost',
+  dialect: 'mysql',
+  port: 3306
 });
 
-module.exports = {sql, conexion};
+async function authenticate() {
+  try {
+    await db.authenticate();
+    console.log('Conexión establecida correctamente.');
+  } catch (error) {
+    console.error('Error al conectar a la base de datos:', error);
+  }
+}
+authenticate();
+
+module.exports = db;

@@ -1,52 +1,59 @@
-const sequelize = require('sequelize'); //trae el squelize
-const db = require('../config/db.js');//trae la conexion con la bd
+const { Sequelize, DataTypes } = require('sequelize');
+const db = require('../config/db.js');
 
-const usuarioModel = db.define("usuario", {//usuarios corresponde a la tabala con la que se va a trabajar
-    id_usuario:{
-        type: sequelize.INTEGER,
+const usuarioModel = db.define('usuario', {
+    ID_Usuario:{
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
     },
-    nombre:{
-        type: sequelize.STRING,
+    Nombre:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    apellido:{
-        type: sequelize.STRING,
+    Apellido:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    edad:{
-        type: sequelize.STRING,
+    Direccion:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    fecha_nacimiento:{
-        type: sequelize.DATEONLY,
+    Edad:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    telefono:{
-        type: sequelize.BIGINT,
+    Fecha_nacimiento:{
+        type: DataTypes.DATEONLY,
+        allowNull: false
+    },
+    Telefono:{
+        type: DataTypes.BIGINT,
         unique: true,
         allowNull: false
     },
-    correo:{
-        type: sequelize.STRING,
+    Correo:{
+        type: DataTypes.STRING,
         unique: true,
         allowNull: false
     },
-    rol:{
-        type: sequelize.STRING,
+    Rol:{
+        type: DataTypes.STRING,
         allowNull: false
     },
-    nombre_usuario: {
-        type: sequelize.STRING,
+    Nombre_usuario: {
+        type: DataTypes.STRING,
         unique: true,
         allowNull: false
     },
-    contrasena:{
-        type: sequelize.STRING,
+    Contrasena:{
+        type: DataTypes.STRING,
         allowNull: false
     }
+}, {
+    tableName: 'usuario',
+    timestamps: false
 });
 
 module.exports = usuarioModel;
