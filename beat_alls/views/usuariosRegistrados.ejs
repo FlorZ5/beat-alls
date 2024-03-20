@@ -46,6 +46,7 @@
                     <td><%= user.Nombre_usuario %></td>
                     <td><%= user.Contrasena %></td>
                     <td>
+                        <a href="/formularioActualizacion?id=<%= user.ID_Usuario %>&nombre=<%= user.Nombre %>&apellido=<%= user.Apellido %>&direccion=<%= user.Direccion %>&edad=<%= user.Edad %>&fechaNacimiento=<%= user.Fecha_nacimiento %>&telefono=<%= user.Telefono %>&correo=<%= user.Correo %>&rol=<%= user.Rol %>&nombreUsuario=<%= user.Nombre_usuario %>&contrasena=<%= user.Contrasena %>">Actualizar</a>
                         <a href="/usuariosRegistrados/<%= user.ID_Usuario %>">Borrar</a>
                     </td>
                 </tr>

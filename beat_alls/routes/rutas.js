@@ -8,7 +8,9 @@ router.get("/registroUsuarios", paginas.registroUsuarios);
 
 router.post("/registroUsuarios", paginas.altasUsuario);
 
-// router.put("/usuariosRegistrados/:id", paginas.actualizarUsuario); //Ruta para actualizar
+router.get("/formularioActualizacion", paginas.formularioActualizacion);
+
+router.post("/usuariosRegistrados/:id", paginas.actualizarUsuario);
 
 router.get("/usuariosRegistrados/:id", paginas.eliminarUsuario);
 /*Aquí terminan las rutas del CRUD usuarios*/
